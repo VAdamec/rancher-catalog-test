@@ -1,0 +1,19 @@
+version: '2'
+services:
+  vault-pki-client:
+    image: example.com/tools/vault-pki-client:stable
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: host_type=common
+    environment:
+     VAULT_ADDR: ${VAULT_ADDR}
+     VAULT_TOKEN: ${VAULT_TOKEN}
+     RANCHER_URL: ${RANCHER_URL}
+     RANCHER_PROJECT_ID: ${RANCHER_PROJECT_ID}
+     RANCHER_ACCESS_KEY: ${RANCHER_ACCESS_KEY}
+     RANCHER_SECRET_KEY: ${RANCHER_SECRET_KEY}
+     RANCHER_CERT_ID: ${RANCHER_CERT_ID}
+     VAULT_COMMON_NAME: ${VAULT_COMMON_NAME}
+     VAULT_ROLE: ${VAULT_ROLE}
+     VAULT_TTL: ${VAULT_TTL}
+     DEBUG: ${DEBUG}

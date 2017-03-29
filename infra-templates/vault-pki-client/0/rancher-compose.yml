@@ -1,0 +1,70 @@
+.catalog:
+  name: vault-pki-client
+  version: 0
+  description: Simple NodeJS client which refresh given certificate before expiration. Using Vault PKI and Rancher API
+  uuid: af55bf74-1451-11e7-93ae-92361f002671
+  minimum_rancher_version: 0
+  questions:
+      - variable: VAULT_ADDR
+        label: Enter URL for Vault instance/balancer
+        description: URL for Vault PKI
+        default: 'https://vault.example.com'
+        required: true
+        type: string
+      - variable: VAULT_TOKEN
+        label: Enter TOKEN for Vault instance/balancer
+        description: API Token for Vault PKI
+        required: true
+        type: password
+      - variable: RANCHER_URL
+        label: Enter FQDN for Rancher server instance
+        description: FQDN for Rancher API
+        default: 'rancher-ui.example.com'
+        required: true
+        type: string
+      - variable: RANCHER_PORT
+        label: Enter port of Rancher server instance
+        description: Port for Rancher API
+        default: '443'
+        required: true
+        type: string
+      - variable: RANCHER_PROJECT_ID
+        label: Enter Rancher environment project ID
+        description: Project ID Rancher
+        default: '1a5'
+        required: true
+        type: string
+      - variable: RANCHER_ACCESS_KEY
+        label: Enter Rancher access key
+        description: Rancher access key
+        required: true
+        type: password
+      - variable: RANCHER_SECRET_KEY
+        label: Enter Rancher secret key
+        description: Rancher secret key
+        required: true
+        type: password
+      - variable: RANCHER_CERT_ID
+        label: RANCHER_CERT_ID
+        description: Enter certificate ID (visible in Rancher UI or via API)
+        type: string
+      - variable: VAULT_COMMON_NAME
+        label: Common name
+        description: Choose certificate to keep up2date
+        type: certificate
+      - variable: VAULT_TTL
+        label: Enter TTL for certificate (minutes)
+        description: Certificate TTL in minutes
+        default: 3600m
+        required: true
+        type: string
+      - variable: VAULT_ROLE
+        label: Enter Vault PKI role for certificate/CA
+        description: Vault policy for PKI
+        default: 'example-dot-com'
+        required: true
+        type: string
+      - variable: DEBUG
+        label: Enable debug for NodeJS
+        description: Enter star for all or just selected module (http,...)
+        type: string

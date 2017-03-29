@@ -1,0 +1,8 @@
+name: vault-pki-client
+description: |
+  Simple NodeJS client which refresh given certificate before expiration. Using Vault PKI and Rancher API
+version: 0
+category: PKI
+maintainer: Vaclav Adamec <vaclav.adamec@suchy-zleb.cz>
+license: MIT
+projectURL: https://github.com/VAdamec/rancher-catalog-test.git
